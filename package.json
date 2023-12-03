@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  },
+  "dependencies": {
+    "react-rss": "^2.0.1"
+  }
+}
