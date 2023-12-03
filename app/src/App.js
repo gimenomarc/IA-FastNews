@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { useState, useEffect } from 'react';
+import NewsCard from './Components/NewsCard';  // Adjust the path accordingly
+import Parser from 'rss-parser';
 
-function App() {
+
+const rssFeedURL = 'https://hnrss.org/newest';
+
+const App = () => {
+  const [newsItems, setNewsItems] = useState([]);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      const parser = new Parser();
+      const feed = await parser.parseURL(rssFeedURL);
+      setNewsItems(feed.items);
+    };
+
+    fetchNews();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      {newsItems.map((item, index) => (
+        <NewsCard key={index} item={item} />
+      ))}
     </div>
   );
-}
+};
 
 export default App;
