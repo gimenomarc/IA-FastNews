@@ -1,7 +1,8 @@
-// App.js con Tailwind CSS y componentes NewsCard
-
+// App.js
 import React from 'react';
 import NewsCard from './Components/NewsCard';
+import Header from './Components/Header';
+import './App.css';
 
 const newsItems = [
   {
@@ -24,9 +25,12 @@ const newsItems = [
 function App() {
   return (
     <div className="App">
-      {newsItems.map((item) => (
-        <NewsCard key={item.title} item={item} />
-      ))}
+      <Header />
+      <div className="news-container">
+        {newsItems.map((item) => (
+          <NewsCard key={item.title} item={item} />
+        ))}
+      </div>
     </div>
   );
 }
