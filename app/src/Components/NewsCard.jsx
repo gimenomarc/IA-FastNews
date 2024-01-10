@@ -28,10 +28,12 @@ const NewsCard = ({ item }) => {
             </svg>
           </a>
         </div>
+        {item.media && item.media.thumbnail && (
+          <img src={item.media.thumbnail.url} alt="News Thumbnail" className="thumbnail" />
+        )}
       </div>
     </div>
   );
 };
 
 export default NewsCard;
-
