@@ -1,12 +1,12 @@
 .App {
   text-align: center;
-  background-color: #282c34;
 }
 
 body {
-  background-color: #282c34; /* Set your desired background color */
-  margin: 0; /* Remove default body margin */
-  font-family: 'Arial', sans-serif; /* Optionally set a default font-family */
+  background: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%, #ffd460 100%); /* Degradado naranja a amarillo */
+  background-attachment: fixed; /* Para que el degradado permanezca fijo mientras se desplaza la página */
+  margin: 0;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .load-more-button {
