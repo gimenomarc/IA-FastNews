@@ -8,3 +8,20 @@ body {
   margin: 0; /* Remove default body margin */
   font-family: 'Arial', sans-serif; /* Optionally set a default font-family */
 }
+
+.load-more-button {
+  background-color: #3498db; /* Color de fondo del botón */
+  color: #ecf0f1; /* Color del texto del botón */
+  padding: 12px 20px; /* Ajusta el padding horizontal para hacer el botón más ancho */
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-bottom: 2rem; /* Reduzco el margen inferior */
+  width: 42%;
+
+  &:hover {
+    background-color: #2980b9; /* Cambia el color de fondo al pasar el ratón por encima */
+  }
+}

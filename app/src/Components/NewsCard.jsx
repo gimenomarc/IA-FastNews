@@ -2,14 +2,12 @@ import React from 'react';
 import './NewsCard.css';
 
 const NewsCard = ({ item }) => {
-  
-
   const { title, description, link, categories, 'media:content': mediaContent } = item;
   let imageUrl;
 
   if (mediaContent && mediaContent['@url']) {
     imageUrl = mediaContent['@url'];
-  } 
+  }
 
   console.log('URL de la imagen:', imageUrl);
 
