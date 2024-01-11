@@ -2,42 +2,24 @@ import React from 'react';
 import './NewsCard.css';
 
 const NewsCard = ({ item }) => {
-  const { title, description, link, categories, 'media:content': mediaContent } = item;
-  let imageUrl;
-
-  if (mediaContent && mediaContent['@url']) {
-    imageUrl = mediaContent['@url'];
-  }
-
-  console.log('URL de la imagen:', imageUrl);
+  const { title, content, link, categories, image } = item;
 
   return (
     <div className="container">
+        {image && (
+          <div className="image" style={{ backgroundImage: `url(${image})` }}></div>
+        )}
       <div className="card">
-        <div className="image" style={{ backgroundImage: `url(${imageUrl})` }}></div>
         <div className="content">
           <h2 className="title">{title}</h2>
-          <p className="description">{description}</p>
-          <a href={link} className="link">
-            Más información
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="icon"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
+          <p className="description">{content}</p>
           <div className="categories">
             {categories && categories.map((category, index) => (
               <span key={index} className="category">{category}</span>
             ))}
           </div>
         </div>
+        {/* Comentario: Puedes ajustar el estilo y la posición del enlace según tus preferencias */}
       </div>
     </div>
   );

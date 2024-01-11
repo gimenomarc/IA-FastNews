@@ -4,7 +4,7 @@ import './Header.css';
 const Header = () => {
   return (
     <header className="header">
-      <h1 className="title">IA-NEWS</h1>
+      <h1 className="title_ia">IA-NEWS</h1>
     </header>
   );
 };
